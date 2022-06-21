@@ -1,0 +1,71 @@
+﻿@model IEnumerable<LEHUUQUAN.Models.LichChieu>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>LichChieu</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Mã lịch
+        </th>
+        <th>
+            Mã Phim
+        </th>
+        <th>
+            Ngày
+        </th>
+        <th>
+            Giờ
+        </th>
+        <th>
+            Giá
+        </th>
+        <th>
+            Số lượng
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.malich)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.maphim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ngay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.soluong)
+            </td>
+            <td>
+                @if (item.soluong > 0)
+                {
+                    <a class="btn btn-success"
+                       href="@Url.Action("ThemGioHang", "GioHang", new {@id = item.maphim, @strUrl = Request.Url.ToString()})">Đặt vé</a>
+                }
+                else
+                {
+                    <b>Hết vé</b>
+                }
+            </td>
+        </tr>
+    }
+
+</table>

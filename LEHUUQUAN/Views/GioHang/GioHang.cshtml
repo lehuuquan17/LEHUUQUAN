@@ -1,0 +1,58 @@
+﻿@model IEnumerable<LEHUUQUAN.Models.GioHang>
+
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>GioHang</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.tensp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hinhsp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.soluong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dthanhtien)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.tensp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hinhsp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.soluong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dthanhtien)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

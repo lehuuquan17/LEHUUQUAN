@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Test22" Class="RapchieuphimDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.;Initial Catalog=Test22;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="Test22ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ChiTiet" Member="ChiTiets">
+    <Type Name="ChiTiet">
+      <Column Name="mahd" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="malich" Type="System.String" DbType="Char(7) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="soluong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="HoaDon_ChiTiet" Member="HoaDon" ThisKey="mahd" OtherKey="MaHD" Type="HoaDon" IsForeignKey="true" />
+      <Association Name="LichChieu_ChiTiet" Member="LichChieu" ThisKey="malich" OtherKey="malich" Type="LichChieu" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HoaDon" Member="HoaDons">
+    <Type Name="HoaDon">
+      <Column Name="MaHD" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NgayMua" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MaKH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="HoaDon_ChiTiet" Member="ChiTiets" ThisKey="MaHD" OtherKey="mahd" Type="ChiTiet" />
+      <Association Name="KhachHang_HoaDon" Member="KhachHang" ThisKey="MaKH" OtherKey="makh" Type="KhachHang" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KhachHang" Member="KhachHangs">
+    <Type Name="KhachHang">
+      <Column Name="makh" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="hoten" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="matkhau" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="diachi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="dienthoai" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Association Name="KhachHang_HoaDon" Member="HoaDons" ThisKey="makh" OtherKey="MaKH" Type="HoaDon" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LichChieu" Member="LichChieus">
+    <Type Name="LichChieu">
+      <Column Name="malich" Type="System.String" DbType="Char(7) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="maphim" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="gio" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="gia" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="soluong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="LichChieu_ChiTiet" Member="ChiTiets" ThisKey="malich" OtherKey="malich" Type="ChiTiet" />
+      <Association Name="Phim_LichChieu" Member="Phim" ThisKey="maphim" OtherKey="maphim" Type="Phim" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Phim" Member="Phims">
+    <Type Name="Phim">
+      <Column Name="maphim" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tenphim" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="daodien" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="hinh" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ngaychieu" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Phim_LichChieu" Member="LichChieus" ThisKey="maphim" OtherKey="maphim" Type="LichChieu" />
+    </Type>
+  </Table>
+</Database>

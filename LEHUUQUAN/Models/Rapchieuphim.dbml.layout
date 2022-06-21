@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Rapchieuphim">
+  <DataContextMoniker Name="/RapchieuphimDataContext" />
+  <nestedChildShapes>
+    <classShape Id="6eba3fa0-fcb6-43ae-9786-ed44fe170a19" absoluteBounds="6.25, 1.25, 2, 1.3862939453125">
+      <DataClassMoniker Name="/RapchieuphimDataContext/ChiTiet" />
+      <nestedChildShapes>
+        <elementListCompartment Id="30c63aaf-6d83-4098-9fea-f0ad42fca92b" absoluteBounds="6.265, 1.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d74d9b0c-005e-4c8a-925d-f78cd44b4d74" absoluteBounds="3.5, 4.25, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/RapchieuphimDataContext/HoaDon" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fa01bebf-6b44-4a41-bbc6-7e2fb700b91b" absoluteBounds="3.515, 4.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="527c4844-f3f8-4aa1-ba20-8321ec209094" absoluteBounds="0.75, 4, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/RapchieuphimDataContext/KhachHang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="890dc23e-1e97-4076-9bda-498ebe3bf1d5" absoluteBounds="0.765, 4.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="977d0485-ed8b-411d-bf8c-648be952f1b9" absoluteBounds="3.5, 0.875, 2, 1.9631982421875">
+      <DataClassMoniker Name="/RapchieuphimDataContext/LichChieu" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1fcc45a6-028d-41ad-ae4a-ec52abfcb0cc" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="37d44028-1b22-418a-957c-a69b972713a3" absoluteBounds="0.75, 1, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/RapchieuphimDataContext/Phim" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bbe3b8bd-9b1f-4944-acf9-f547b6bc3e50" absoluteBounds="0.765, 1.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 4.94314697265625); (7.25 : 4.94314697265625); (7.25 : 2.6362939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RapchieuphimDataContext/HoaDon/HoaDon_ChiTiet" />
+      <nodes>
+        <classShapeMoniker Id="d74d9b0c-005e-4c8a-925d-f78cd44b4d74" />
+        <classShapeMoniker Id="6eba3fa0-fcb6-43ae-9786-ed44fe170a19" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.94314697265625); (3.5 : 4.94314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RapchieuphimDataContext/KhachHang/KhachHang_HoaDon" />
+      <nodes>
+        <classShapeMoniker Id="527c4844-f3f8-4aa1-ba20-8321ec209094" />
+        <classShapeMoniker Id="d74d9b0c-005e-4c8a-925d-f78cd44b4d74" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 1.94314697265625); (6.25 : 1.94314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RapchieuphimDataContext/LichChieu/LichChieu_ChiTiet" />
+      <nodes>
+        <classShapeMoniker Id="977d0485-ed8b-411d-bf8c-648be952f1b9" />
+        <classShapeMoniker Id="6eba3fa0-fcb6-43ae-9786-ed44fe170a19" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.88544840494792); (3.5 : 1.88544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RapchieuphimDataContext/Phim/Phim_LichChieu" />
+      <nodes>
+        <classShapeMoniker Id="37d44028-1b22-418a-957c-a69b972713a3" />
+        <classShapeMoniker Id="977d0485-ed8b-411d-bf8c-648be952f1b9" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
